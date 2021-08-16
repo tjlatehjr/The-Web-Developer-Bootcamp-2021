@@ -1,0 +1,62 @@
+- Have only one (1) h1 on a page.
+- The use of heading should match the levels (sub-section heading) in a page. ie. H2 should come before h3 then h4, h5, h6
+Don't use heading for the sake of size. Don't use h2 unless there is an h1. H3 unless there is H2 etc
+- Valid children of ul are = <li> <script> <template>
+- We usually use <ol> when we're ranking things.
+- When using external link links, it's important to include the protocol. EX: http://www.google.com
+- Anchor is an inline tag
+- INLINE (span, img, a)
+	- span is a container element to wrap content or single them out. ex: tags
+- BLOCK (div, h1, p,)
+- Other elements (hr, br, sup "superscript", sub "subscript")
+- HTML Entities are sprecial character that might not be possible, reserved, or easy to type. Starts with "&" and ends with ";"
+	(< &lt; > &gt;). There are numbers too.
+- Semantic markup - meaning of the content of an element (main, header, nav, time, date section, footer, abbr, data, time)
+	- used for things like crawlable, assessibility (screenreader) and for readibilty for you and other devs.
+	- <main> is used to wrap the main content of the page. This that won't repeat itself on other pages like navbar, sidebar, 
+	search etc. <section> is a stand section (content) of a page. <article> is a self-contained composition that independently
+	reusble ex: widget. <aside> is a part of a document that is not esssentially related to the content. header> introductory 
+	content of a page <footer> usually final content (copyright). <figure> self-contained element with optional caption <figcaption>
+- Emmet is an extension built into VSCode using shortcuts to write code
+	- CHILD (>) = main>section>li
+	- Sibling (+) = h1+h2+h3
+	- Multiplication (*) = ul>li*5
+	- Item numbering ($) nav>ul>li*5>a[href=www.$.com]
+	- Classes, id, attribute = (.) ul>li*5.links// (#) ul>li*5#links // ([]) ul>li*5>a[href=]
+	- Text ({}) - ul>li*5>a{Link$}
+
+Table 
+	- <table>, <td>, <tr>, <th>, <colgroup>, <caption>
+	- When one table row has more columns than the other, we simply add an empty <td></td> to the lesser row
+	- <thead>, <tbody>, <tfoot> = break table into logical sections tell that this part of the table is a header, body or footer of the table
+	- colspan and rowspan atributes are used to span rows and columns
+
+Forms 
+	- are containers for inputs (contents). It doesn't showup on a page without any content. It is used to group elements. We also specify where to
+	send the data. "action" attribute specifies where the data should be sent when the form is submitted. 
+	- input are contents that can be used in a form. There a 20+ types of inputs that can be used used and we can specify them using "type" attrib
+	- placeholder attrib - is an attrib used on text/password/number etc input to show what data should be used in that field
+	- input type of number can use min, max and step attrib too.
+	- <label> is used for assesibility and is associated in the background with a checkbox for ex. It also allows you to be able to click that 
+	label the same way as a the radio or checkbox. We do this by using the "for" attrib in the <label> to match the "id" attrib in the <input>.
+	You can decide to nest the input into the label to implicitly associate the two and won't require "for" and "id" attribs. 
+
+	- <button>, when used in a form is usually used to submit the content of that form. When is button is used in a form, you have to explicitly 
+	specify what the action of that button is using the "type" attribute. If not, the default is submit. type="button" treats the button how it will
+	behave if it was outside of a form. <input type="submit"> can be used to for a submit button but in order to specify the text within the button
+	we have to use the value attrib
+
+	- "name" attrib is usually a short txt that represents a content when it's sent to a server. 
+	- Multiple radio button that are connected together should have the same "name" attribute. When using a radio button, it's important to use the value
+	attribute. When you select a radio button and submit the form without the value attrib, the value sent is "on", and we don't want that. Therefore, we
+	use the value attrib to specify the specific value that will be sent when the form is submitted. 
+	- When using <select> we also use value. The attrib "selected" is used to pre-select an option
+	- "range" attrib in <input> uses "name" attrib just like the text attrib to specify what the value passed represents. Ex: name="volume" --- ?volume=75
+	also, the "value" attrib specifies the initial value of the range input. We also use the "step" attrib to indicate the amount of #s to skip.
+	- <textarea> are forms that are usually used to recieve large input of text. We use "cols" and "row" attrib to specify the hegiht and width of the 
+	textarea in pixels. 
+
+Validation
+	- During form validation, we use required to specify input fields that are required. Attribs such as min and max-length specify the the min and max # of char
+	- "pattern" is an input attrib used to specify the pattern of the input that will be entered. Some input type such as url and email have predefined pattern
+	even if you don't specify the pattern explicitly. 
